@@ -1,16 +1,18 @@
 from hashlib import md5
 
 ## Part One ##
+print('------------------------------------------')
 secret = "ckczppom"
+print(f'Secret: {secret}')
+print('----------------------------------------\n')
+
+print('\n--------------- Part One -----------------')
 i = 0
 
 def starts_with_five_zeroes(hash):
     return hash[:5] == "00000"
 
 while True:
-    if i % 10000 == 0:
-        print(i)
-
     combination = secret + str(i)  
     hash = md5(combination.encode()).hexdigest()
     if starts_with_five_zeroes(hash):
@@ -20,8 +22,8 @@ while True:
         break
     i += 1
 
-
-print('------------------------------------------')
+print('----------------------------------------\n')
+print('\n--------------- Part Two -----------------')
 
 
 ## Part Two ##
@@ -31,9 +33,6 @@ def starts_with_six_zeroes(hash):
     return hash[:6] == "000000"
 
 while True:
-    if i % 10000 == 0:
-        print(i)
-
     combination = secret + str(i)  
     hash = md5(combination.encode()).hexdigest()
     if starts_with_six_zeroes(hash):
@@ -42,3 +41,5 @@ while True:
         print(f'Number: {i}')
         break
     i += 1
+
+print('----------------------------------------')
