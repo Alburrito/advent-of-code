@@ -14,7 +14,7 @@ def get_floor_and_position(data):
         if position < 0 and floor < 0:
             position = index
             
-    return floor,index
+    return floor, position+1
 
 
 print(get_floor_and_position(data))
