@@ -50,10 +50,11 @@ class AND_Gate(Gate):
         self.type = "AND"
 
     def evaluate(self,db):
-        input_1 = db[self.input_wires[0]]
-        input_2 = db[self.input_wires[1]]
-        db[self.output_wire] =  input_1 & input_2
-        [gate.evaluate() for gate in self.output_gate]
+        if self.input_wires[0] in db and self.input_wires[1] in db:
+            input_1 = db[self.input_wires[0]]
+            input_2 = db[self.input_wires[1]]
+            db[self.output_wire] =  input_1 & input_2
+            [gate.evaluate() for gate in self.output_gate]
 
 
 class OR_Gate(Gate):
