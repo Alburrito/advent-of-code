@@ -2,8 +2,8 @@
 
 class Gate():
 
-    def __init__(self, input_val, output_wire):
-        self.input_val = input_val
+    def __init__(self, input_wires: list, output_wire: str):
+        self.input_wires = input_wires
         self.output_wire = output_wire
         self.input_gate = None
         self.output_gate = []
@@ -13,75 +13,80 @@ class Gate():
         pass
 
     def __str__(self):
-        msg = f"Gate {self.type}: {self.input_val} -> {self.output_wire}"
-        msg += f"\n\tInput: {self.input_gate}"
-        msg += f"\n\tOutput: {self.output_gate}"
+        msg = f"Gate {self.type}: "
+        [msg += f"{i} " for i in self.input_wires]
+        msg += f"-> {self.output_wire}"
+        # msg += f"\n\tInput: {self.input_gate}"
+        # msg += f"\n\tOutput: {self.output_gate}"
         msg += f"\n--------------------------------------------------------"
         return  msg
 
 class LOAD_Gate(Gate):
-    def __init__(self, input_val, output_wire):
-        super().__init__(input_val, output_wire)
+    def __init__(self, input_wires, output_wire):
+        super().__init__(input_wires, output_wire)
         self.type = "LOAD"
     
     def evaluate(self,db):
-        db[self.output_wire] = self.input_val
+        db[self.output_wire] = int(self.input_wires[0])
         [gate.evaluate() for gate in self.output_gate]
 
 
 class NOT_Gate(Gate):
-    def __init__(self, input_val, output_wire):
-        super().__init__(input_val, output_wire)
+    def __init__(self, input_wires, output_wire):
+        super().__init__(input_wires, output_wire)
         self.type = "NOT"
 
     def evaluate(self, db):
-        db[self.output_wire] = ~ db[self.input_val]
-        [gate.evaluate() for gate in self.output_gate]
+        if self.input_wires[0] in db:
+            db[self.output_wire] = ~ db[self.input_wires[0]]
+            [gate.evaluate() for gate in self.output_gate]
+        else:
+            pass
 
 
 class AND_Gate(Gate):
-    def __init__(self, input_val, output_wire):
-        super().__init__(input_val, output_wire)
+    def __init__(self, input_wires, output_wire):
+        super().__init__(input_wires, output_wire)
         self.type = "AND"
 
     def evaluate(self,db):
-        input_1 = db[self.input_val[0]]
-        input_2 = db[self.input_val[1]]
+        input_1 = db[self.input_wires[0]]
+        input_2 = db[self.input_wires[1]]
         db[self.output_wire] =  input_1 & input_2
         [gate.evaluate() for gate in self.output_gate]
 
 
 class OR_Gate(Gate):
-    def __init__(self, input_val, output_wire):
-        super().__init__(input_val, output_wire)
+    def __init__(self, input_wires, output_wire):
+        super().__init__(input_wires, output_wire)
         self.type = "OR"
 
     def evaluate(self,db):
-        input_1 = db[self.input_val[0]]
-        input_2 = db[self.input_val[1]]
+        input_1 = db[self.input_wires[0]]
+        input_2 = db[self.input_wires[1]]
         db[self.output_wire] = input_1 | input_2
         [gate.evaluate() for gate in self.output_gate]
 
 
 class LSHIFT_Gate(Gate):
-    def __init__(self, input_val, output_wire):
-        super().__init__(input_val, output_wire)
+    def __init__(self, input_wires, output_wire):
+        super().__init__(input_wires, output_wire)
         self.type = "LSHIFT"
 
     def evaluate(self,db):
-        input_1 = db[self.input_val[0]]
-        shift = self.input_val[1]
+        input_1 = db[self.input_wires[0]]
+        shift = self.input_wires[1]
         db[self.output_wire] = input_1 << shift
         [gate.evaluate() for gate in self.output_gate]
 
 class RSHIFT_Gate(Gate):
-    def __init__(self, input_val, output_wire):
-        super().__init__(input_val, output_wire)
+    def __init__(self, input_wires, output_wire):
+        super().__init__(input_wires, output_wire)
         self.type = "RSHIFT"
 
     def evaluate(self,db):
-        input_1 = db[self.input_val[0]]
-        shift = self.input_val[1]
+        input_1 = db[self.input_wires[0]]
+        shift = self.input_wires[1]
         db[self.output_wire] = input_1 >> shift
         [gate.evaluate() for gate in self.output_gate]
 
@@ -97,7 +102,7 @@ class Circuit():
 
     def search_gates(self, gate):
         for g in self.gates:
-            if g.input_val == gate.output_wire:
+            if g.input_wires == gate.output_wire:
                 gate.output_gate.append(g)
                 g.input_gate = gate
 

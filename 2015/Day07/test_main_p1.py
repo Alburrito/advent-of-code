@@ -1,73 +1,153 @@
-with open('input', 'r') as f:
-    data = f.readlines()
 
 
-def load(value, wire, wire_dir):
-    wire_dir[wire] = value
+class Gate():
 
-def operation(operator, op1, op2, wire, wire_dir):
-    if operator == 'AND':
-        try:
-            w1 = wire_dir[op1]
-        except:
-            w1 = 0
-        try:
-            w2 = wire_dir[op2]
-        except:
-            w2 = 0
-        wire_dir[wire] = w1 & w2
-    if operator == 'OR':
-        try:
-            w1 = wire_dir[op1]
-        except:
-            w1 = 0
-        try:
-            w2 = wire_dir[op2]
-        except:
-            w2 = 0
-        wire_dir[wire] = w1 | w2
-    if operator == 'LSHIFT':
-        try:
-            w1 = wire_dir[op1]
-        except:
-            w1 = 0
-        shifts = int(op2)
-        wire_dir[wire] = w1 << shifts
-    if operator == 'RSHIFT':
-        try:
-            w1 = wire_dir[op1]
-        except:
-            w1 = 0
-        shifts = int(op2)
-        wire_dir[wire] = w1 >> shifts
+    def __init__(self, input_val, output_wire):
+        self.input_val = input_val
+        self.output_wire = output_wire
+        self.input_gate = None
+        self.output_gate = []
+        self.type = None
+
+    def evaluate(self):
+        pass
+
+    def __str__(self):
+        msg = f"Gate {self.type}: {self.input_val} -> {self.output_wire}"
+        msg += f"\n\tInput: {self.input_gate}"
+        msg += f"\n\tOutput: {self.output_gate}"
+        msg += f"\n--------------------------------------------------------"
+        return  msg
+
+class LOAD_Gate(Gate):
+    def __init__(self, input_val, output_wire):
+        super().__init__(input_val, output_wire)
+        self.type = "LOAD"
+    
+    def evaluate(self,db):
+        db[self.output_wire] = self.input_val
+        [gate.evaluate() for gate in self.output_gate]
 
 
+class NOT_Gate(Gate):
+    def __init__(self, input_val, output_wire):
+        super().__init__(input_val, output_wire)
+        self.type = "NOT"
 
-wire_dir = {}
-for instruction in data:
-    instruction = instruction.replace('\n', '')
-    print(instruction)
-    splitted = instruction.split(" ")
-    if splitted[0].isdigit(): # Load
-        value = int(splitted[0])
-        wire = splitted[2]
-        load(value, wire, wire_dir)
-    else:
-        if splitted[0] == 'NOT':
-            value = int(wire_dir[splitted[1]]) ^ 0xffff
-            wire = splitted[3]
-            load(value, wire, wire_dir)
-        else: # Any other operation
-            op1 = splitted[0]
-            op2 = splitted[2]
-            operator = splitted[1]
-            wire = splitted[4]
-            operation(operator, op1, op2, wire, wire_dir)
+    def evaluate(self, db):
+        db[self.output_wire] = ~ db[self.input_val]
+        [gate.evaluate() for gate in self.output_gate]
 
-    print(wire_dir)
-    print("------")
+
+class AND_Gate(Gate):
+    def __init__(self, input_val, output_wire):
+        super().__init__(input_val, output_wire)
+        self.type = "AND"
+
+    def evaluate(self,db):
+        input_1 = db[self.input_val[0]]
+        input_2 = db[self.input_val[1]]
+        db[self.output_wire] =  input_1 & input_2
+        [gate.evaluate() for gate in self.output_gate]
+
+
+class OR_Gate(Gate):
+    def __init__(self, input_val, output_wire):
+        super().__init__(input_val, output_wire)
+        self.type = "OR"
+
+    def evaluate(self,db):
+        input_1 = db[self.input_val[0]]
+        input_2 = db[self.input_val[1]]
+        db[self.output_wire] = input_1 | input_2
+        [gate.evaluate() for gate in self.output_gate]
+
+
+class LSHIFT_Gate(Gate):
+    def __init__(self, input_val, output_wire):
+        super().__init__(input_val, output_wire)
+        self.type = "LSHIFT"
+
+    def evaluate(self,db):
+        input_1 = db[self.input_val[0]]
+        shift = self.input_val[1]
+        db[self.output_wire] = input_1 << shift
+        [gate.evaluate() for gate in self.output_gate]
+
+class RSHIFT_Gate(Gate):
+    def __init__(self, input_val, output_wire):
+        super().__init__(input_val, output_wire)
+        self.type = "RSHIFT"
+
+    def evaluate(self,db):
+        input_1 = db[self.input_val[0]]
+        shift = self.input_val[1]
+        db[self.output_wire] = input_1 >> shift
+        [gate.evaluate() for gate in self.output_gate]
+
+
+class Circuit():
+
+    def __init__(self, inputpath):
+        with open(inputpath, 'r') as f:
+            self.data = f.readlines()
+
+        self.gates = []
+        self.db = {}
+
+    def search_gates(self, gate):
+        for g in self.gates:
+            if g.input_val == gate.output_wire:
+                gate.output_gate.append(g)
+                g.input_gate = gate
+
+
+    def create_circuit(self):
+        print('Loading gates...')
+        for line in self.data:
+            line = line.split()
+            print(line)
+            if line[0] == 'NOT':
+                self.gates.append(NOT_Gate(line[1], line[3]))
+            elif line[0].isdigit():
+                self.gates.append(LOAD_Gate(int(line[0]), line[2]))
+            else:
+                if line[1] == 'AND':
+                    self.gates.append(AND_Gate([line[0], line[2]], line[4]))
+                elif line[1] == 'OR':
+                    self.gates.append(OR_Gate([line[0], line[2]], line[4]))
+                elif line[1] == 'LSHIFT':
+                    self.gates.append(LSHIFT_Gate([line[0], line[2]], line[4]))
+                elif line[1] == 'RSHIFT':
+                    self.gates.append(RSHIFT_Gate([line[0], line[2]], line[4]))
+        
+        print('Loaded gates.')
+
+        print('Connecting gates...')
+        for gate in self.gates:
+            self.search_gates(gate)
+        print('Connected gates.')
+
+    def evaluate(self):
+        print('Evaluating...')
+        for gate in self.gates:
+            print(self.db)
+            print(gate)
+            if gate.type == 'LOAD':
+                gate.evaluate(self.db)
+        print('Evaluated.')
+
+
+c = Circuit('input')
+c.create_circuit()
+c.evaluate()
+print(c.db)
+
 
 print("")
+print("")
+print("")
 
-for key in wire_dir:
-    print(f'{key} -> {wire_dir[key]}')
+for g in c.gates:
+    print(g)
+    print("")
