@@ -8,8 +8,4 @@ name = "pypi"
 [dev-packages]
 
 [requires]
-<<<<<<< HEAD
-python_version = "3.9"
-=======
-python_version = "3.8"
->>>>>>> d99c3b896b530647d86dc9e083a2b65412f633ce
+python_version = "3.10"
