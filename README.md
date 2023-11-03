@@ -46,14 +46,6 @@ The repository is organized by year and day and contains a python file with the 
 | [...]
 ```
 
-## Usage
-
-You can clone this repository and run the Python solutions for each day by navigating to the respective day's directory and executing the `main.py` file.
-
-In the context of Advent of Code, it's important to know that while the <b>puzzles are the same for all participants</b>, each of us receives a <b>personalized input</b> from the Advent of Code site. This personalized input means that your approach and solution to a given puzzle will be unique to you. This means that even if you have the same programming language and approach as someone else, <b>your answers will be different</b>.
-
-Happy coding and best of luck with your Advent of Code journey!
-
 ## Full list of solutions
 
 ### [Year 2023](./2023/)
