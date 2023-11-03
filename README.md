@@ -1,1 +1,84 @@
-# advent-of-code
+# Advent of Code Solutions
+
+[![Advent of Code](https://img.shields.io/badge/Advent%20of%20Code-web-E60000)](https://adventofcode.com/)
+![Python](https://img.shields.io/badge/Language-Python-blue)
+[![GitHub](https://img.shields.io/badge/GitHub-%40Alburrito-blue?logo=github)](https://github.com/Alburrito)
+
+
+Welcome to my Advent of Code repository! This repository contains my solutions to the Advent of Code challenges for each year. [Advent of Code](https://adventofcode.com/) is an annual coding challenge that provides a series of programming puzzles for the month of December.
+
+All the solutions are implemented in Python. I've also included the description of the challenge for each day, which can be found in the `README.md` file for each day.
+
+These may not be the most efficient solutions, but they are the ones I came up with while enjoying the challenges. I hope you find them useful but remember, if you are stuck on a challenge, just give it a break and come back to it later.
+
+## Table of Contents
+
+- [About](#about)
+- [Directory Structure](#directory-structure)
+- [Full list of solutions](#full-list-of-solutions)
+
+## About
+
+[Advent of Code](https://adventofcode.com/) is a fun and educational challenge that encourages problem-solving, algorithm design, and coding in a variety of programming languages. In this repository, you'll find my solutions implemented in Python.
+
+You can clone this repository and run the Python solutions for each day by navigating to the respective day's directory and executing the `main.py` file.
+
+In the context of Advent of Code, it's important to know that while the <b>puzzles are the same for all participants</b>, each of us receives a <b>personalized input</b> from the Advent of Code site. This personalized input means that your approach and solution to a given puzzle will be unique to you. This means that even if you have the same programming language and approach as someone else, <b>your answers will be different</b>.
+
+Happy coding and best of luck with your Advent of Code journey!
+
+## Directory Structure
+
+The repository is organized by year and day and contains a python file with the solutions (rare cases have multiple files), the input I got for the challenge, and a `README.md` file with the description of the challenge, retrieved from the web.
+
+```
+/
+|-- 2023/
+| |-- Day1/
+| | |-- main.py
+| | |-- input
+| |-- Day2/
+| | |-- main.py
+| | |-- input
+| [...]
+|-- 2022/
+| |-- Day1/
+| [...]
+```
+
+## Usage
+
+You can clone this repository and run the Python solutions for each day by navigating to the respective day's directory and executing the `main.py` file.
+
+In the context of Advent of Code, it's important to know that while the <b>puzzles are the same for all participants</b>, each of us receives a <b>personalized input</b> from the Advent of Code site. This personalized input means that your approach and solution to a given puzzle will be unique to you. This means that even if you have the same programming language and approach as someone else, <b>your answers will be different</b>.
+
+Happy coding and best of luck with your Advent of Code journey!
+
+## Full list of solutions
+
+### [Year 2023](./2023/)
+
+### [Year 2022](./2022/)
+
+### [Year 2021](./2021/)
+
+### [Year 2020](./2020/)
+
+### [Year 2019](./2019/)
+
+### [Year 2018](./2018/)
+
+### [Year 2017](./2017/)
+
+### [Year 2016](./2016/)
+
+### [Year 2015](./2015/)
+
+- [Day 1: Not Quite Lisp](./2015/Day01/)
+- [Day 2: I Was Told There Would Be No Math](./2015/Day02/)
+- [Day 3: Perfectly Spherical Houses in a Vacuum](./2015/Day03/)
+- [Day 4: The Ideal Stocking Stuffer](./2015/Day04/)
+- [Day 5: Doesn't He Have Intern-Elves For This?](./2015/Day05/)
+- [Day 6: Probably a Fire Hazard](./2015/Day06/)
+- [Day 7: Day 7: Some Assembly Required](./2015/Day07/)
+- [Day 8: Matchsticks](./2015/Day08/)
