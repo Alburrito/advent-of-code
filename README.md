@@ -37,9 +37,11 @@ The repository is organized by year and day and contains a python file with the 
 | |-- Day1/
 | | |-- main.py
 | | |-- input
+| | |-- README.md
 | |-- Day2/
 | | |-- main.py
 | | |-- input
+| | |-- README.md
 | [...]
 |-- 2022/
 | |-- Day1/
@@ -49,6 +51,8 @@ The repository is organized by year and day and contains a python file with the 
 ## Full list of solutions
 
 ### [Year 2023](./2023/)
+
+- [Day 01: Trebuchet?!](./2023/Day01/)
 
 ### [Year 2022](./2022/)
 
@@ -66,11 +70,15 @@ The repository is organized by year and day and contains a python file with the 
 
 ### [Year 2015](./2015/)
 
-- [Day 1: Not Quite Lisp](./2015/Day01/)
-- [Day 2: I Was Told There Would Be No Math](./2015/Day02/)
-- [Day 3: Perfectly Spherical Houses in a Vacuum](./2015/Day03/)
-- [Day 4: The Ideal Stocking Stuffer](./2015/Day04/)
-- [Day 5: Doesn't He Have Intern-Elves For This?](./2015/Day05/)
-- [Day 6: Probably a Fire Hazard](./2015/Day06/)
-- [Day 7: Day 7: Some Assembly Required](./2015/Day07/)
-- [Day 8: Matchsticks](./2015/Day08/)
+- [Day 01: Not Quite Lisp](./2015/Day01/)
+- [Day 02: I Was Told There Would Be No Math](./2015/Day02/)
+- [Day 03: Perfectly Spherical Houses in a Vacuum](./2015/Day03/)
+- [Day 04: The Ideal Stocking Stuffer](./2015/Day04/)
+- [Day 05: Doesn't He Have Intern-Elves For This?](./2015/Day05/)
+- [Day 06: Probably a Fire Hazard](./2015/Day06/)
+- [Day 07: Day 7: Some Assembly Required](./2015/Day07/)
+- [Day 08: Matchsticks](./2015/Day08/)
+- [Day 09: All in a Single Night](./2015/Day09/)
+- [Day 10: Elves Look, Elves Say](./2015/Day10/)
+- [Day 11: Corporate Policy](./2015/Day11/)
+- [Day 12: JSAbacusFramework.io](./2015/Day12/)
