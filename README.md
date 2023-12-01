@@ -1,6 +1,8 @@
 # Advent of Code Solutions
 
+![Progress](https://img.shields.io/badge/Progress-5.78%25-red)
 [![Advent of Code](https://img.shields.io/badge/Advent%20of%20Code-web-E60000)](https://adventofcode.com/)
+
 ![Python](https://img.shields.io/badge/Language-Python-blue)
 [![GitHub](https://img.shields.io/badge/GitHub-%40Alburrito-blue?logo=github)](https://github.com/Alburrito)
 
@@ -32,7 +34,7 @@ Happy coding and best of luck with your Advent of Code journey!
 The repository is organized by year and day and contains a python file with the solutions (rare cases have multiple files), the input I got for the challenge, and a `README.md` file with the description of the challenge, retrieved from the web.
 
 ```
-/
+years/
 |-- 2023/
 | |-- Day1/
 | | |-- main.py
@@ -50,35 +52,35 @@ The repository is organized by year and day and contains a python file with the 
 
 ## Full list of solutions
 
-### [Year 2023](./2023/)
+### [Year 2023](./years/2023/)
 
-- [Day 01: Trebuchet?!](./2023/Day01/)
+- [Day 01: Trebuchet?!](./years/2023/Day01/)
 
-### [Year 2022](./2022/)
+### [Year 2022](./years/2022/)
 
-### [Year 2021](./2021/)
+### [Year 2021](./years/2021/)
 
-### [Year 2020](./2020/)
+### [Year 2020](./years/2020/)
 
-### [Year 2019](./2019/)
+### [Year 2019](./years/2019/)
 
-### [Year 2018](./2018/)
+### [Year 2018](./years/2018/)
 
-### [Year 2017](./2017/)
+### [Year 2017](./years/2017/)
 
-### [Year 2016](./2016/)
+### [Year 2016](./years/2016/)
 
-### [Year 2015](./2015/)
+### [Year 2015](./years/2015/)
 
-- [Day 01: Not Quite Lisp](./2015/Day01/)
-- [Day 02: I Was Told There Would Be No Math](./2015/Day02/)
-- [Day 03: Perfectly Spherical Houses in a Vacuum](./2015/Day03/)
-- [Day 04: The Ideal Stocking Stuffer](./2015/Day04/)
-- [Day 05: Doesn't He Have Intern-Elves For This?](./2015/Day05/)
-- [Day 06: Probably a Fire Hazard](./2015/Day06/)
-- [Day 07: Day 7: Some Assembly Required](./2015/Day07/)
-- [Day 08: Matchsticks](./2015/Day08/)
-- [Day 09: All in a Single Night](./2015/Day09/)
-- [Day 10: Elves Look, Elves Say](./2015/Day10/)
-- [Day 11: Corporate Policy](./2015/Day11/)
-- [Day 12: JSAbacusFramework.io](./2015/Day12/)
+- [Day 01: Not Quite Lisp](./years/2015/Day01/)
+- [Day 02: I Was Told There Would Be No Math](./years/2015/Day02/)
+- [Day 03: Perfectly Spherical Houses in a Vacuum](./years/2015/Day03/)
+- [Day 04: The Ideal Stocking Stuffer](./years/2015/Day04/)
+- [Day 05: Doesn't He Have Intern-Elves For This?](./years/2015/Day05/)
+- [Day 06: Probably a Fire Hazard](./years/2015/Day06/)
+- [Day 07: Day 7: Some Assembly Required](./years/2015/Day07/)
+- [Day 08: Matchsticks](./years/2015/Day08/)
+- [Day 09: All in a Single Night](./years/2015/Day09/)
+- [Day 10: Elves Look, Elves Say](./years/2015/Day10/)
+- [Day 11: Corporate Policy](./years/2015/Day11/)
+- [Day 12: JSAbacusFramework.io](./years/2015/Day12/)
