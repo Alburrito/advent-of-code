@@ -52,9 +52,10 @@ years/
 
 ## Full list of solutions
 
-### [Year 2023](./years/2023/) ![Progress](https://img.shields.io/badge/Progress-4.00%25-red)
+### [Year 2023](./years/2023/) ![Progress](https://img.shields.io/badge/Progress-8.00%25-red)
 
 - [Day 01: Trebuchet?!](./years/2023/Day01/)
+- [Day 02: Cube Conundrum](./years/2023/Day02/)
 
 ### [Year 2022](./years/2022/) ![Progress](https://img.shields.io/badge/Progress-0.00%25-red)
 
@@ -70,7 +71,7 @@ years/
 
 ### [Year 2016](./years/2016/) ![Progress](https://img.shields.io/badge/Progress-0.00%25-red)
 
-### [Year 2015](./years/2015/) ![Progress](https://img.shields.io/badge/Progress-48.00%25-orange)
+### [Year 2015](./years/2015/) ![Progress](https://img.shields.io/badge/Progress-44.00%25-orange)
 
 - [Day 01: Not Quite Lisp](./years/2015/Day01/)
 - [Day 02: I Was Told There Would Be No Math](./years/2015/Day02/)

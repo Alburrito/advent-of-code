@@ -1,3 +1,5 @@
+# COMPLETED
+
 with open('Day01/input', 'r') as f:
     data = f.read()
 

@@ -26,7 +26,11 @@ def calculate_completion_percentage():
 
     completed_days = 0
     for year in years:
-        days = [day for day in os.listdir(f'years/{year}') if day.startswith('Day')]
+        days = [ # Add day if the folder contains 'main.py' with # COMPLETED flag
+            day for day in os.listdir(f'years/{year}') if \
+                os.path.isfile(os.path.join(f'years/{year}/{day}', 'main.py')) and \
+                open(os.path.join(f'years/{year}/{day}', 'main.py')).readline().startswith('# COMPLETED')
+        ]
         progress = calculate_progress(len(days), 25)
         color = percentage_to_color(progress)
         data[year] = (progress, color)

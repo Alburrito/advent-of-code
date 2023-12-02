@@ -1,3 +1,5 @@
+# COMPLETED
+
 COLUMN_WIDTH = 10
 
 def look_and_say(number):

@@ -1,3 +1,5 @@
+# COMPLETED
+
 NUM_BITS = 16
 
 def parse_line(line: str):

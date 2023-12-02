@@ -1,3 +1,5 @@
+# COMPLETED
+
 import re
 
 def decode(string):

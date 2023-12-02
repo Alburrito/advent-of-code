@@ -1,3 +1,5 @@
+# COMPLETED
+
 # Must be 8 characters long
 # Increment until is valid
 # Increment: xx -> xy -> xz -> ya -> yb...

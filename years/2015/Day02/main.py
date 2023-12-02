@@ -1,3 +1,5 @@
+# COMPLETED
+
 with open('Day02/input', 'r') as f:
     data = f.readlines()
 
