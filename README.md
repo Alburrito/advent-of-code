@@ -36,17 +36,17 @@ The repository is organized by year and day and contains a python file with the 
 ```
 years/
 |-- 2023/
-| |-- Day1/
+| |-- Day01/
 | | |-- main.py
 | | |-- input
 | | |-- README.md
-| |-- Day2/
+| |-- Day02/
 | | |-- main.py
 | | |-- input
 | | |-- README.md
 | [...]
 |-- 2022/
-| |-- Day1/
+| |-- Day01/
 | [...]
 ```
 
