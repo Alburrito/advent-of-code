@@ -1,6 +1,6 @@
 # Advent of Code Solutions
 
-![Progress](https://img.shields.io/badge/Progress-5.78%25-red)
+![Progress](https://img.shields.io/badge/Progress-5.77%25-red)
 [![Advent of Code](https://img.shields.io/badge/Advent%20of%20Code-web-E60000)](https://adventofcode.com/)
 
 ![Python](https://img.shields.io/badge/Language-Python-blue)
@@ -52,25 +52,25 @@ years/
 
 ## Full list of solutions
 
-### [Year 2023](./years/2023/)
+### [Year 2023](./years/2023/) ![Progress](https://img.shields.io/badge/Progress-4.00%25-red)
 
 - [Day 01: Trebuchet?!](./years/2023/Day01/)
 
-### [Year 2022](./years/2022/)
+### [Year 2022](./years/2022/) ![Progress](https://img.shields.io/badge/Progress-0.00%25-red)
 
-### [Year 2021](./years/2021/)
+### [Year 2021](./years/2021/) ![Progress](https://img.shields.io/badge/Progress-0.00%25-red)
 
-### [Year 2020](./years/2020/)
+### [Year 2020](./years/2020/) ![Progress](https://img.shields.io/badge/Progress-0.00%25-red)
 
-### [Year 2019](./years/2019/)
+### [Year 2019](./years/2019/) ![Progress](https://img.shields.io/badge/Progress-0.00%25-red)
 
-### [Year 2018](./years/2018/)
+### [Year 2018](./years/2018/) ![Progress](https://img.shields.io/badge/Progress-0.00%25-red)
 
-### [Year 2017](./years/2017/)
+### [Year 2017](./years/2017/) ![Progress](https://img.shields.io/badge/Progress-0.00%25-red)
 
-### [Year 2016](./years/2016/)
+### [Year 2016](./years/2016/) ![Progress](https://img.shields.io/badge/Progress-0.00%25-red)
 
-### [Year 2015](./years/2015/)
+### [Year 2015](./years/2015/) ![Progress](https://img.shields.io/badge/Progress-48.00%25-orange)
 
 - [Day 01: Not Quite Lisp](./years/2015/Day01/)
 - [Day 02: I Was Told There Would Be No Math](./years/2015/Day02/)
