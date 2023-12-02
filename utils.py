@@ -1,3 +1,14 @@
+# This file contains utility functions for the Advent of Code repository.
+# This IS NOT RELATED with the Advent of Code challenge itself.
+# It is only used to update the README.md file with the progress badge
+# and to create the folder structure for a new day (too lazy to do it manually)
+
+# If you still want to use this file, you can do it by running:
+# python3 utils.py <command> <args>
+# where <command> is one of the following:
+# - update-progress: updates the progress badge in the README.md file. Runned with a pre-commit hook.
+# - mkday YYYY DD: creates the folder structure for a new day.
+
 import os
 import re
 import sys
@@ -47,10 +58,10 @@ def create_day_files(year, day):
     os.makedirs(day_folder, exist_ok=True)
 
     with open(os.path.join(day_folder, 'input'), 'w') as input_file:
-        input_file.write('')
+        input_file.write('Add your challenge input here')
 
     with open(os.path.join(day_folder, 'README.md'), 'w') as readme_file:
-        readme_file.write(f'# Day {day}: Solution\n\nPut your solution explanation here.')
+        readme_file.write(f'# Day {day}: Challenge\n\nPut your challenge explanation here.')
 
     with open(os.path.join(day_folder, 'main.py'), 'w') as main_file:
         main_file.write('# Add your Python solution code here')
