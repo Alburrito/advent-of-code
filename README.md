@@ -1,6 +1,6 @@
 # Advent of Code Solutions
 
-![Progress](https://img.shields.io/badge/Progress-5.77%25-red)
+![Progress](https://img.shields.io/badge/Progress-6.22%25-red)
 [![Advent of Code](https://img.shields.io/badge/Advent%20of%20Code-web-E60000)](https://adventofcode.com/)
 
 ![Python](https://img.shields.io/badge/Language-Python-blue)
@@ -52,7 +52,7 @@ years/
 
 ## Full list of solutions
 
-### [Year 2023](./years/2023/) ![Progress](https://img.shields.io/badge/Progress-8.00%25-red)
+### [Year 2023](./years/2023/) ![Progress](https://img.shields.io/badge/Progress-12.00%25-red)
 
 - [Day 01: Trebuchet?!](./years/2023/Day01/)
 - [Day 02: Cube Conundrum](./years/2023/Day02/)
