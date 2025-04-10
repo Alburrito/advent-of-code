@@ -1,6 +1,6 @@
 # Advent of Code Solutions
 
-![Progress](https://img.shields.io/badge/Progress-6.66%25-red)
+![Progress](https://img.shields.io/badge/Progress-7.11%25-red)
 [![Advent of Code](https://img.shields.io/badge/Advent%20of%20Code-web-E60000)](https://adventofcode.com/)
 
 ![Python](https://img.shields.io/badge/Language-Python-blue)
@@ -57,6 +57,8 @@ years/
 - [Day 01: Trebuchet?!](./years/2023/Day01/)
 - [Day 02: Cube Conundrum](./years/2023/Day02/)
 - [Day 03: Gear Ratios](./years/2023/Day03/)
+- [Day 04: Scratchcards](./years/2023/Day04/)
+- [Day 05: If You Give A Seed A Fertilizer](./years/2023/Day05/)
 
 ### [Year 2022](./years/2022/) ![Progress](https://img.shields.io/badge/Progress-0.00%25-red)
 
@@ -72,7 +74,7 @@ years/
 
 ### [Year 2016](./years/2016/) ![Progress](https://img.shields.io/badge/Progress-0.00%25-red)
 
-### [Year 2015](./years/2015/) ![Progress](https://img.shields.io/badge/Progress-44.00%25-orange)
+### [Year 2015](./years/2015/) ![Progress](https://img.shields.io/badge/Progress-48.00%25-orange)
 
 - [Day 01: Not Quite Lisp](./years/2015/Day01/)
 - [Day 02: I Was Told There Would Be No Math](./years/2015/Day02/)
