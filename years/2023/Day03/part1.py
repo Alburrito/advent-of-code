@@ -1,5 +1,6 @@
 # COMPLETED
 
+import os
 import re
 
 def contains_symbol(string, symbols):
@@ -80,7 +81,7 @@ def get_numbers_around(data, sym_row, sym_col):
     return numbers
 
 if __name__ == '__main__':
-    with open('input', 'r') as f:
+    with open(os.path.join(os.path.dirname(__file__), 'input'), 'r') as f:
         data = f.read().splitlines()
 
 

@@ -1,4 +1,7 @@
+# COMPLETED
+
 import json
+import os
 
 
 def find_numbers(obj):
@@ -37,7 +40,7 @@ if __name__ == "__main__":
 
     print("-"*50)
 
-    with open("input") as f:
+    with open(os.path.join(os.path.dirname(__file__), 'input'), 'r') as f:
         data = f.read()
     data_json = json.loads(data)
 

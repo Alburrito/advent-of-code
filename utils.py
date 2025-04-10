@@ -30,27 +30,43 @@ def calculate_progress(completed_days, total_days):
     return int(progress * 100) / 100
 
 def calculate_completion_percentage():
+    """
+    Calculates the completion percentage for each year and the total progress,
+    considering that each day has two parts (`part1.py` and `part2.py`).
+
+    Returns:
+        dict: A dictionary containing the progress and color for each year and the total.
+    """
     data = {}
 
     years = [year for year in os.listdir('years') if not year.startswith('.')]
-    total_days = len(years) * 25
+    total_parts = len(years) * 25 * 2  # 25 days per year, 2 parts per day
 
-    completed_days = 0
+    completed_parts = 0
     for year in years:
-        days = [ # Add day if the folder contains 'main.py' with # COMPLETED flag
-            day for day in os.listdir(f'years/{year}') if \
-                os.path.isfile(os.path.join(f'years/{year}/{day}', 'main.py')) and \
-                open(os.path.join(f'years/{year}/{day}', 'main.py')).readline().startswith('# COMPLETED')
-        ]
-        progress = calculate_progress(len(days), 25)
+        parts_completed = 0
+        days = [day for day in os.listdir(f'years/{year}') if os.path.isdir(f'years/{year}/{day}')]
+
+        for day in days:
+            day_path = f'years/{year}/{day}'
+            part1_path = os.path.join(day_path, 'part1.py')
+            part2_path = os.path.join(day_path, 'part2.py')
+
+            # Check if part1.py and part2.py exist and are marked as completed
+            if os.path.isfile(part1_path) and open(part1_path).readline().startswith('# COMPLETED'):
+                parts_completed += 1
+            if os.path.isfile(part2_path) and open(part2_path).readline().startswith('# COMPLETED'):
+                parts_completed += 1
+
+        progress = calculate_progress(parts_completed, 25 * 2)  # 25 days * 2 parts per day
         color = percentage_to_color(progress)
         data[year] = (progress, color)
-        completed_days += len(days)
+        completed_parts += parts_completed
 
-    total_percentage = calculate_progress(completed_days, total_days)
+    total_percentage = calculate_progress(completed_parts, total_parts)
     total_color = percentage_to_color(total_percentage)
     data['total'] = (total_percentage, total_color)
-    
+
     return data
 
 def create_day_files(year, day):
@@ -63,40 +79,20 @@ def create_day_files(year, day):
     with open(os.path.join(day_folder, 'README.md'), 'w') as readme_file:
         readme_file.write(f'# Day {day}: Challenge\n\nPut your challenge explanation here.')
 
-    with open(os.path.join(day_folder, 'main.py'), 'w') as main_file:
-        main_file.write('# MARK AS COMPLETED WHEN FINISHED\n')
-        main_file.write('# COMPLETED\n')
-        main_file.write('\n')
-        main_file.write('import os\n')
-        main_file.write('import sys\n')
-        main_file.write('import subprocess\n')
-        main_file.write('\n')
-        main_file.write('def main():\n')
-        main_file.write('    if len(sys.argv) != 2:\n')
-        main_file.write('        print("Usage: python3 main.py <1|2>")\n')
-        main_file.write('        sys.exit(1)\n')
-        main_file.write('    option = sys.argv[1]\n')
-        main_file.write('    day_dir = os.path.dirname(os.path.abspath(__file__))\n')
-        main_file.write('\n')
-        main_file.write('    if option == "1":\n')
-        main_file.write('        subprocess.run(["python3", os.path.join(day_dir, "part1.py")])\n')
-        main_file.write('    elif option == "2":\n')
-        main_file.write('        subprocess.run(["python3", os.path.join(day_dir, "part2.py")])\n')
-        main_file.write('    else:\n')
-        main_file.write('        print("Invalid option. Use \'1\' to run part1.py or \'2\' to run part2.py.")\n')
-        main_file.write('        sys.exit(1)\n')
-        main_file.write('\n')
-        main_file.write('if __name__ == "__main__":\n')
-        main_file.write('    main()\n')
-
     with open(os.path.join(day_folder, 'part1.py'), 'w') as p1_file:
-        p1_file.write('# Implement part 1 solution here\n')
+        p1_file.write('# MARK AS COMPLETED WHEN FINISHED\n')
+        p1_file.write('# COMPLETED\n')
+        p1_file.write('\n')
+        p1_file.write('import os\n')
         p1_file.write('\n')
         p1_file.write('if __name__ == "__main__":\n')
         p1_file.write('    pass\n')
 
     with open(os.path.join(day_folder, 'part2.py'), 'w') as p2_file:
-        p2_file.write('# Implement part 2 solution here\n')
+        p2_file.write('# MARK AS COMPLETED WHEN FINISHED\n')
+        p2_file.write('# COMPLETED\n')
+        p2_file.write('\n')
+        p2_file.write('import os\n')
         p2_file.write('\n')
         p2_file.write('if __name__ == "__main__":\n')
         p2_file.write('    pass\n')

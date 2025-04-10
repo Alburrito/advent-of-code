@@ -1,5 +1,7 @@
 # COMPLETED
 
+import os
+
 NUM_BITS = 16
 
 def parse_line(line: str):
@@ -54,7 +56,7 @@ def all_wires_solved(wires: dict, wires_set: set):
 
 if __name__ == "__main__":
 
-    with open('input_2', "r") as file:
+    with open(os.path.join(os.path.dirname(__file__), 'input_2'), 'r') as file:
         instructions = file.read().splitlines()
     n_instructions = len(instructions)
 

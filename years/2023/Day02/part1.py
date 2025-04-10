@@ -1,5 +1,7 @@
 # COMPLETED
 
+import os
+
 MAX_BALLS = {
     'red': 12,
     'green': 13,
@@ -44,7 +46,7 @@ def get_power(max_balls):
 
 if __name__ == '__main__':
     
-    with open('input', 'r') as f:
+    with open(os.path.join(os.path.dirname(__file__), 'input'), 'r') as f:
         data = f.readlines()
 
     samples = [

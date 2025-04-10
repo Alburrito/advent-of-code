@@ -31,21 +31,23 @@ Happy coding and best of luck with your Advent of Code journey!
 
 ## Directory Structure
 
-The repository is organized by year and day and contains a python file with the solutions (rare cases have multiple files), the input I got for the challenge, and a `README.md` file with the description of the challenge, retrieved from the web.
+The repository is organized by year and day and contains two python files with the solutions (one file per challenge part), the input I got for the challenge, and a `README.md` file with the description of the challenge, retrieved from the web.
 
 ```
 years/
-|-- 2023/
+|-- 2015/
 | |-- Day01/
-| | |-- main.py
 | | |-- input
+| | |-- part1.py
+| | |-- part2.py
 | | |-- README.md
 | |-- Day02/
-| | |-- main.py
 | | |-- input
+| | |-- part1.py
+| | |-- part2.py
 | | |-- README.md
 | [...]
-|-- 2022/
+|-- 2016/
 | |-- Day01/
 | [...]
 ```

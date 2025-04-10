@@ -1,6 +1,8 @@
 # COMPLETED
 
-with open('Day01/input', 'r') as f:
+import os
+
+with open(os.path.join(os.path.dirname(__file__), 'input'), 'r') as f:
     data = f.read()
 
 

@@ -1,5 +1,7 @@
 # COMPLETED
 
+import os
+
 def parse_card(card):
     card_fields = card.split(':') # "Card 1:", numbers
     card_id = int([x for x in card_fields[0].split(' ') if x != ''][1])
@@ -30,7 +32,7 @@ def get_score(mine_winning):
 
 
 if __name__ == '__main__':
-    with open('input') as f:
+    with open(os.path.join(os.path.dirname(__file__), 'input'), 'r') as f:
         data = f.read().splitlines()
     
     samples = [

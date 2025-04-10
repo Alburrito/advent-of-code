@@ -1,5 +1,6 @@
 # COMPLETED
 
+import os
 import re
 
 def decode(string):
@@ -32,7 +33,7 @@ def encode(string):
     return string
 
 if __name__ == "__main__":
-    with open('input') as f:
+    with open(os.path.join(os.path.dirname(__file__), 'input'), 'r') as f:
         strings = f.readlines()
     
     n_str_literals = 0

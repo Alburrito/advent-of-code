@@ -1,4 +1,8 @@
-with open('input', 'r') as f:
+# COMPLETED
+
+import os
+
+with open(os.path.join(os.path.dirname(__file__), 'input'), 'r') as f:
     data = f.readlines()
 
 class Light():
@@ -8,12 +12,13 @@ class Light():
 
     def turn(self, mode):
         if mode == "on":
-            self.light = True
+            self.light += 1
         else:
-            self.light = False
+            if self.light > 0:
+                self.light -= 1
 
     def toggle(self):
-        self.light = not self.light
+        self.light += 2
 
 class Grid():
 
@@ -22,16 +27,15 @@ class Grid():
         for i in range(rows):
             row = []
             for j in range(cols):
-                row.append(Light(False))
+                row.append(Light(0))
             self.grid.append(row)
     
-    def count_lights(self):
-        count = 0
+    def count_brightness(self):
+        brightness = 0
         for row in self.grid:
             for light in row:
-                if light.light:
-                    count += 1
-        return count
+                brightness += light.light
+        return brightness
 
     def turn(self, mode, source, destination):
         for i in range(int(source[0]), int(destination[0])+1):
@@ -46,7 +50,7 @@ class Grid():
 
 grid = Grid(1000, 1000)
 
-i=1
+i=0
 for instruction in data:
     print(f'Processing ({i}/{len(data)}): {instruction}')
     splitted = instruction.split(" ")
@@ -60,9 +64,7 @@ for instruction in data:
         source = splitted[1].split(',')
         destination = splitted[3].replace("\n", "").split(',')
         grid.toggle(source, destination)
-    
-    i+=1
+    i += 1
 
-
-count = grid.count_lights()
-print(f'Lights on: {count}')
+brightness = grid.count_brightness()
+print(f'Lights on: {brightness}')

@@ -1,3 +1,5 @@
+# COMPLETED
+
 import os
 from typing import List, Tuple
 from itertools import permutations

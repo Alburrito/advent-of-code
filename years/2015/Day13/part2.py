@@ -1,3 +1,5 @@
+# COMPLETED
+
 import os
 from typing import List, Tuple
 from itertools import permutations
@@ -57,7 +59,7 @@ def parse_data(data: List[str]) -> dict:
 
     return guests_info
 
-def add_myself(guests_info: dict) -> dict:
+def add_myself(guests_info: dict):
     """
     Adds a new guest, 'MYSELF', to the guests_info dictionary with neutral happiness values.
 

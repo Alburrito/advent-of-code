@@ -1,5 +1,7 @@
 # COMPLETED
 
+import os
+
 # Must be 8 characters long
 # Increment until is valid
 # Increment: xx -> xy -> xz -> ya -> yb...
@@ -78,7 +80,7 @@ def increment_until_valid(password, solution):
 
 if __name__ == "__main__":
 
-    with open("input") as f:
+    with open(os.path.join(os.path.dirname(__file__), 'input'), 'r') as f:
         input_password = f.read().strip()
 
     test_passwords = [

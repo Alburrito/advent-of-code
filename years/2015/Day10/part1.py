@@ -1,5 +1,7 @@
 # COMPLETED
 
+import os
+
 COLUMN_WIDTH = 10
 
 def look_and_say(number):
@@ -39,7 +41,7 @@ def look_and_say(number):
 
 if __name__ == "__main__":
 
-    with open("input", "r") as f:
+    with open(os.path.join(os.path.dirname(__file__), 'input'), 'r') as f:
         input_number = f.read().strip()
 
     numbers = ["1","11","21","1211","111221"]

@@ -1,5 +1,6 @@
 # COMPLETED
 
+import os
 
 class City:
     def __init__(self, name):
@@ -65,7 +66,7 @@ def deep_search(cities, start_city, search_shortest=True):
 
 
 if __name__ == "__main__":
-    with open("input") as f:
+    with open(os.path.join(os.path.dirname(__file__), 'input'), 'r') as f:
         distances = f.readlines()
 
     # Parse information

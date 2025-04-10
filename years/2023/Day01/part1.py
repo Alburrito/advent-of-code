@@ -1,5 +1,7 @@
 # COMPLETED
 
+import os
+
 NUMBERS_REPRESENTATION = {
     'one': '1one',
     'two': '2two',
@@ -63,7 +65,7 @@ def starts_with_number(string):
     return ('-1', '-1')
 
 if __name__ == '__main__':
-    with open('input', 'r') as f:
+    with open(os.path.join(os.path.dirname(__file__), 'input'), 'r') as f:
         data = f.read().splitlines()
 
 
