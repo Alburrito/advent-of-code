@@ -139,14 +139,12 @@ if __name__ == "__main__":
         "Butterscotch: capacity -1, durability -2, flavor 6, texture 3, calories 8",
         "Cinnamon: capacity 2, durability 3, flavor -2, texture -1, calories 3"
     ]
-    max_teaspoons = 100
-
     print("TEST CASE:")
-    solve(test_data, max_teaspoons)
+    solve(test_data, 100)
 
     print("#"*100)
 
     print("SOLUTION:")
     with open(os.path.join(os.path.dirname(__file__), 'input'), 'r') as f:
         data = f.readlines()
-    solve(data, max_teaspoons)
+    solve(data, 100)
