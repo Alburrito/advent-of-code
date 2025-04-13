@@ -1,6 +1,6 @@
 # Advent of Code Solutions
 
-![Progress](https://img.shields.io/badge/Progress-8.88%25-red)
+![Progress](https://img.shields.io/badge/Progress-9.33%25-red)
 [![Advent of Code](https://img.shields.io/badge/Advent%20of%20Code-web-E60000)](https://adventofcode.com/)
 
 ![Python](https://img.shields.io/badge/Language-Python-blue)
@@ -76,7 +76,7 @@ years/
 
 ### [Year 2016](./years/2016/) ![Progress](https://img.shields.io/badge/Progress-0.00%25-red)
 
-### [Year 2015](./years/2015/) ![Progress](https://img.shields.io/badge/Progress-64.00%25-yellow)
+### [Year 2015](./years/2015/) ![Progress](https://img.shields.io/badge/Progress-68.00%25-yellow)
 
 - [Day 01: Not Quite Lisp](./years/2015/Day01/)
 - [Day 02: I Was Told There Would Be No Math](./years/2015/Day02/)
@@ -94,3 +94,4 @@ years/
 - [Day 14: Reindeer Olympics](./years/2015/Day14/)
 - [Day 15: Science for Hungry People](./years/2015/Day15/)
 - [Day 16: Aunt Sue](./years/2015/Day16/)
+- [Day 17: No Such Thing as Too Much](./years/2015/Day17/)
