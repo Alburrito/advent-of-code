@@ -77,25 +77,36 @@ def create_day_files(year, day):
         input_file.write('Add your challenge input here')
 
     with open(os.path.join(day_folder, 'README.md'), 'w') as readme_file:
-        readme_file.write(f'# Day {day}: Challenge\n\nPut your challenge explanation here.')
+        readme_file.write(f'# Day {day}')
+
+    part_template = """# MARK AS COMPLETED WHEN FINISHED
+# COMPLETED
+
+import os
+
+def get_input_path() -> str:
+    \"\"\"
+    Returns the path to the input file.
+    Returns:
+        str: The absolute path to the input file located in the same directory as this script.
+    \"\"\"
+    return os.path.join(os.path.dirname(__file__), 'input')
+
+if __name__ == "__main__":
+
+    print("TEST:")
+
+    print("-" * 50)
+
+    print("SOLUTION:")
+
+"""
 
     with open(os.path.join(day_folder, 'part1.py'), 'w') as p1_file:
-        p1_file.write('# MARK AS COMPLETED WHEN FINISHED\n')
-        p1_file.write('# COMPLETED\n')
-        p1_file.write('\n')
-        p1_file.write('import os\n')
-        p1_file.write('\n')
-        p1_file.write('if __name__ == "__main__":\n')
-        p1_file.write('    pass\n')
+        p1_file.write(part_template)
 
     with open(os.path.join(day_folder, 'part2.py'), 'w') as p2_file:
-        p2_file.write('# MARK AS COMPLETED WHEN FINISHED\n')
-        p2_file.write('# COMPLETED\n')
-        p2_file.write('\n')
-        p2_file.write('import os\n')
-        p2_file.write('\n')
-        p2_file.write('if __name__ == "__main__":\n')
-        p2_file.write('    pass\n')
+        p2_file.write(part_template)
 
 
 def update_readme_badge(data):
